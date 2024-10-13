@@ -4,6 +4,12 @@ FROM python:3.9
 # 作業ディレクトリを設定
 WORKDIR /app
 
+# 必要なファイルをコピー
+COPY requirements.txt .
+
+# 必要なパッケージをインストール
+RUN pip install -r requirements.txt
+
 # アプリケーションのコードをコピー
 COPY . .
 
